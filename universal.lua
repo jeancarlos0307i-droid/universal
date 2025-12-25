@@ -216,35 +216,11 @@ local HackTab = Window:CreateTab("💀 Hack Mod", 4483362458)
 
 -- AIMBOT SNAP
 local Aimbot=false
-local AimbotKey=Enum.KeyCode.E
-
-local AimbotToggle = HackTab:CreateToggle({
+HackTab:CreateToggle({
 	Name="Aimbot (Closest)",
 	CurrentValue=false,
-	Callback=function(v)
-		Aimbot=v
-	end
+	Callback=function(v) Aimbot=v end
 })
-
-HackTab:CreateInput({
-	Name="Aimbot Keybind (letra)",
-	PlaceholderText="Ex: E",
-	RemoveTextAfterFocusLost=true,
-	Callback=function(txt)
-		txt=txt:upper()
-		if Enum.KeyCode[txt] then
-			AimbotKey=Enum.KeyCode[txt]
-		end
-	end
-})
-
-UIS.InputBegan:Connect(function(input,gp)
-	if gp then return end
-	if input.KeyCode==AimbotKey then
-		Aimbot=not Aimbot
-		AimbotToggle:Set(Aimbot)
-	end
-end)
 
 local function ClosestTarget()
 	local hrp=LP.Character and LP.Character:FindFirstChild("HumanoidRootPart")
@@ -270,10 +246,6 @@ RunService.RenderStepped:Connect(function()
 		end
 	end
 end)
-
-	end
-end)
-
 
 --==================================================
 -- ESP SKELETON + NAME + TRACERS
